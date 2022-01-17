@@ -66,6 +66,14 @@ function generatePassword() {
     };
 
   };
+  let finalPass = [];
+  function randomizer () {
+    for (i=0; i < passwordLimit; i++) {
+    const randomChar = Math.floor(Math.random() * choices.length);
+    finalPass[i] = choices[randomChar];
+    console.log(choices[randomChar]);
+    } 
+  };
   console.log(choices);
   choicesMade();
   function choicesMade() {
@@ -74,14 +82,12 @@ function generatePassword() {
     generatePassword();
     } 
     else {
-      for (i=0; i < passwordLimit; i++) {
-        const randomPass = Math.floor(Math.random() * choices.length);
-        console.log(choices[randomPass]);
-      }
-    }   
+      randomizer();
+      ;
+    }    
   };
+  return finalPass.join("");
 };
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
