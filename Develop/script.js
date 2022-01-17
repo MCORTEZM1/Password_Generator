@@ -71,10 +71,8 @@ function generatePassword() {
     for (i=0; i < passwordLimit; i++) {
     const randomChar = Math.floor(Math.random() * choices.length);
     finalPass[i] = choices[randomChar];
-    console.log(choices[randomChar]);
     } 
   };
-  console.log(choices);
   choicesMade();
   function choicesMade() {
     if (choices === 0) {
